@@ -1,0 +1,37 @@
+## For complete documenation on all directives, see
+## http://jakarta.apache.org/tomcat/connectors-doc/config/workers.html
+
+worker.reference.type=ajp13
+worker.reference.connect_timeout=5000
+worker.reference.socket_connect_timeout=5000
+worker.reference.connection_pool_timeout=10
+worker.reference.retries=2
+worker.reference.ping_mode=C
+
+# Worker definition for app servers
+worker.app1.reference=worker.reference
+worker.app1.host=pprddftas400.ie.intuit.net
+worker.app1.port=8009
+worker.app1.max_packet_size=16384
+
+worker.app2.reference=worker.reference
+worker.app2.host=pprddftas401.ie.intuit.net
+worker.app2.port=8009
+worker.app2.max_packet_size=16384
+
+worker.app3.reference=worker.reference
+worker.app3.host=pprddftas402.ie.intuit.net
+worker.app3.port=8009
+worker.app3.max_packet_size=16384
+
+worker.app4.reference=worker.reference
+worker.app4.host=pprddftas403.ie.intuit.net
+worker.app4.port=8009
+worker.app4.max_packet_size=16384
+
+worker.loadbalanced.type=lb
+worker.loadbalanced.method=B
+worker.loadbalanced.balance_workers=app1,app2,app3,app4
+worker.loadbalanced.sticky_session=0
+
+worker.list=loadbalanced

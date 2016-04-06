@@ -1,0 +1,133 @@
+I, [2016-03-31T12:10:46.406802 #24233]  INFO -- default-centos-71: -----> Converging <default-centos-71>...
+I, [2016-03-31T12:10:46.407344 #24233]  INFO -- default-centos-71: Preparing files for transfer
+I, [2016-03-31T12:10:46.407407 #24233]  INFO -- default-centos-71: Preparing dna.json
+I, [2016-03-31T12:10:46.407854 #24233]  INFO -- default-centos-71: Preparing current project directory as a cookbook
+I, [2016-03-31T12:10:46.415390 #24233]  INFO -- default-centos-71: Removing non-cookbook files before transfer
+I, [2016-03-31T12:10:46.417787 #24233]  INFO -- default-centos-71: Preparing validation.pem
+I, [2016-03-31T12:10:46.418114 #24233]  INFO -- default-centos-71: Preparing client.rb
+I, [2016-03-31T12:10:46.613519 #24233]  INFO -- default-centos-71: -----> Chef Omnibus installation detected (install only if missing)
+I, [2016-03-31T12:10:46.697221 #24233]  INFO -- default-centos-71: Transferring files to <default-centos-71>
+I, [2016-03-31T12:10:47.641258 #24233]  INFO -- default-centos-71: Starting Chef Client, version 12.8.1
+I, [2016-03-31T12:10:48.574342 #24233]  INFO -- default-centos-71: resolving cookbooks for run list: ["test-apache1::default"]
+I, [2016-03-31T12:10:48.606080 #24233]  INFO -- default-centos-71: Synchronizing Cookbooks:
+I, [2016-03-31T12:10:48.631114 #24233]  INFO -- default-centos-71:   - test-apache1 (0.1.0)
+I, [2016-03-31T12:10:48.631165 #24233]  INFO -- default-centos-71: Installing Cookbook Gems:
+I, [2016-03-31T12:10:48.631190 #24233]  INFO -- default-centos-71: Compiling Cookbooks...
+I, [2016-03-31T12:10:48.631203 #24233]  INFO -- default-centos-71: Converging 17 resources
+I, [2016-03-31T12:10:48.631215 #24233]  INFO -- default-centos-71: Recipe: test-apache1::default
+I, [2016-03-31T12:10:49.621012 #24233]  INFO -- default-centos-71:   * yum_package[httpd] action install (up to date)
+I, [2016-03-31T12:10:49.621062 #24233]  INFO -- default-centos-71:   * cookbook_file[/etc/sysconfig/httpd] action create (up to date)
+I, [2016-03-31T12:10:49.621078 #24233]  INFO -- default-centos-71:   * directory[/etc/httpd] action create (up to date)
+I, [2016-03-31T12:10:49.621091 #24233]  INFO -- default-centos-71:   * directory[/etc/httpd/conf] action create (up to date)
+I, [2016-03-31T12:10:49.631794 #24233]  INFO -- default-centos-71:   * directory[/etc/httpd/conf.d] action create (up to date)
+I, [2016-03-31T12:10:49.631858 #24233]  INFO -- default-centos-71:   * directory[/var/log/httpd] action create (up to date)
+I, [2016-03-31T12:10:49.631874 #24233]  INFO -- default-centos-71:   * link[/etc/httpd/logs] action create (up to date)
+I, [2016-03-31T12:10:49.631887 #24233]  INFO -- default-centos-71:   * directory[/edge-www] action create (up to date)
+I, [2016-03-31T12:10:49.631898 #24233]  INFO -- default-centos-71:   * link[/etc/httpd/modules] action create (up to date)
+I, [2016-03-31T12:10:49.639311 #24233]  INFO -- default-centos-71:   * cookbook_file[/etc/httpd/modules/mod_jk.so] action create (up to date)
+I, [2016-03-31T12:10:49.639361 #24233]  INFO -- default-centos-71:   * template[/etc/httpd/conf/httpd.conf] action create
+I, [2016-03-31T12:10:49.639376 #24233]  INFO -- default-centos-71:     - update content in file /etc/httpd/conf/httpd.conf from 8faff5 to b80667
+I, [2016-03-31T12:10:49.639390 #24233]  INFO -- default-centos-71:     --- /etc/httpd/conf/httpd.conf	2016-03-31 19:01:43.935360000 +0000
+I, [2016-03-31T12:10:49.639402 #24233]  INFO -- default-centos-71:     +++ /etc/httpd/conf/.chef-httpd.conf20160331-14582-1haftu2	2016-03-31 19:10:48.737625000 +0000
+I, [2016-03-31T12:10:49.639428 #24233]  INFO -- default-centos-71:     @@ -19,7 +19,7 @@
+I, [2016-03-31T12:10:49.639439 #24233]  INFO -- default-centos-71:      UseCanonicalName Off
+I, [2016-03-31T12:10:49.639450 #24233]  INFO -- default-centos-71:      
+I, [2016-03-31T12:10:49.639460 #24233]  INFO -- default-centos-71:      # worker MPM
+I, [2016-03-31T12:10:49.639470 #24233]  INFO -- default-centos-71:     -<IfModule prefork.c>
+I, [2016-03-31T12:10:49.639480 #24233]  INFO -- default-centos-71:     +<IfModule worker.c>
+I, [2016-03-31T12:10:49.639491 #24233]  INFO -- default-centos-71:      StartServers       8
+I, [2016-03-31T12:10:49.639512 #24233]  INFO -- default-centos-71:      MinSpareServers    5
+I, [2016-03-31T12:10:49.692266 #24233]  INFO -- default-centos-71:      MaxSpareServers   20
+I, [2016-03-31T12:10:49.692328 #24233]  INFO -- default-centos-71:     - restore selinux security context
+I, [2016-03-31T12:10:49.692346 #24233]  INFO -- default-centos-71:   * template[/etc/httpd/conf.d/httpd-vhosts.conf] action create (up to date)
+I, [2016-03-31T12:10:49.692367 #24233]  INFO -- default-centos-71:   * template[/etc/httpd/conf/mime.types] action create (up to date)
+I, [2016-03-31T12:10:49.699831 #24233]  INFO -- default-centos-71:   * template[/etc/httpd/conf.d/mod-jk.conf] action create (up to date)
+I, [2016-03-31T12:10:49.699872 #24233]  INFO -- default-centos-71:   * cookbook_file[/etc/httpd/conf.d/workers.properties] action create (up to date)
+I, [2016-03-31T12:10:49.699887 #24233]  INFO -- default-centos-71:   * cookbook_file[/edge-www/edge_healthcheck.html] action create (up to date)
+I, [2016-03-31T12:10:49.754545 #24233]  INFO -- default-centos-71:   * service[httpd] action enable (up to date)
+I, [2016-03-31T12:10:49.888884 #24233]  INFO -- default-centos-71:   * service[httpd] action start
+I, [2016-03-31T12:10:49.888939 #24233]  INFO -- default-centos-71:     
+I, [2016-03-31T12:10:49.888958 #24233]  INFO -- default-centos-71:     ================================================================================
+I, [2016-03-31T12:10:49.888977 #24233]  INFO -- default-centos-71:     Error executing action `start` on resource 'service[httpd]'
+I, [2016-03-31T12:10:49.888993 #24233]  INFO -- default-centos-71:     ================================================================================
+I, [2016-03-31T12:10:49.889009 #24233]  INFO -- default-centos-71:     
+I, [2016-03-31T12:10:49.889023 #24233]  INFO -- default-centos-71:     Mixlib::ShellOut::ShellCommandFailed
+I, [2016-03-31T12:10:49.889036 #24233]  INFO -- default-centos-71:     ------------------------------------
+I, [2016-03-31T12:10:49.889050 #24233]  INFO -- default-centos-71:     Expected process to exit with [0], but received '1'
+I, [2016-03-31T12:10:49.889065 #24233]  INFO -- default-centos-71:     ---- Begin output of /bin/systemctl start httpd ----
+I, [2016-03-31T12:10:49.889102 #24233]  INFO -- default-centos-71:     STDOUT: 
+I, [2016-03-31T12:10:49.889117 #24233]  INFO -- default-centos-71:     STDERR: Job for httpd.service failed. See 'systemctl status httpd.service' and 'journalctl -xn' for details.
+I, [2016-03-31T12:10:49.889133 #24233]  INFO -- default-centos-71:     ---- End output of /bin/systemctl start httpd ----
+I, [2016-03-31T12:10:49.889146 #24233]  INFO -- default-centos-71:     Ran /bin/systemctl start httpd returned 1
+I, [2016-03-31T12:10:49.889161 #24233]  INFO -- default-centos-71:     
+I, [2016-03-31T12:10:49.889173 #24233]  INFO -- default-centos-71:     Resource Declaration:
+I, [2016-03-31T12:10:49.889188 #24233]  INFO -- default-centos-71:     ---------------------
+I, [2016-03-31T12:10:49.889201 #24233]  INFO -- default-centos-71:     # In /tmp/kitchen/cache/cookbooks/test-apache1/recipes/default.rb
+I, [2016-03-31T12:10:49.889218 #24233]  INFO -- default-centos-71:     
+I, [2016-03-31T12:10:49.889231 #24233]  INFO -- default-centos-71:     141: service "httpd" do
+I, [2016-03-31T12:10:49.889243 #24233]  INFO -- default-centos-71:     142:   action [:enable, :start]
+I, [2016-03-31T12:10:49.889255 #24233]  INFO -- default-centos-71:     143: end
+I, [2016-03-31T12:10:49.889267 #24233]  INFO -- default-centos-71:     
+I, [2016-03-31T12:10:49.889281 #24233]  INFO -- default-centos-71:     Compiled Resource:
+I, [2016-03-31T12:10:49.889294 #24233]  INFO -- default-centos-71:     ------------------
+I, [2016-03-31T12:10:49.889322 #24233]  INFO -- default-centos-71:     # Declared in /tmp/kitchen/cache/cookbooks/test-apache1/recipes/default.rb:141:in `from_file'
+I, [2016-03-31T12:10:49.889337 #24233]  INFO -- default-centos-71:     
+I, [2016-03-31T12:10:49.889350 #24233]  INFO -- default-centos-71:     service("httpd") do
+I, [2016-03-31T12:10:49.889382 #24233]  INFO -- default-centos-71:       action [:enable, :start]
+I, [2016-03-31T12:10:49.889422 #24233]  INFO -- default-centos-71:       supports {:restart=>nil, :reload=>nil, :status=>nil}
+I, [2016-03-31T12:10:49.889436 #24233]  INFO -- default-centos-71:       retries 0
+I, [2016-03-31T12:10:49.889450 #24233]  INFO -- default-centos-71:       retry_delay 2
+I, [2016-03-31T12:10:49.889462 #24233]  INFO -- default-centos-71:       default_guard_interpreter :default
+I, [2016-03-31T12:10:49.889474 #24233]  INFO -- default-centos-71:       service_name "httpd"
+I, [2016-03-31T12:10:49.889488 #24233]  INFO -- default-centos-71:       enabled true
+I, [2016-03-31T12:10:49.889500 #24233]  INFO -- default-centos-71:       pattern "httpd"
+I, [2016-03-31T12:10:49.889514 #24233]  INFO -- default-centos-71:       declared_type :service
+I, [2016-03-31T12:10:49.889526 #24233]  INFO -- default-centos-71:       cookbook_name "test-apache1"
+I, [2016-03-31T12:10:49.889538 #24233]  INFO -- default-centos-71:       recipe_name "default"
+I, [2016-03-31T12:10:49.889550 #24233]  INFO -- default-centos-71:     end
+I, [2016-03-31T12:10:49.889561 #24233]  INFO -- default-centos-71:     
+I, [2016-03-31T12:10:49.889573 #24233]  INFO -- default-centos-71: 
+I, [2016-03-31T12:10:49.889584 #24233]  INFO -- default-centos-71: Running handlers:
+I, [2016-03-31T12:10:49.889596 #24233]  INFO -- default-centos-71: [2016-03-31T19:10:48+00:00] ERROR: Running exception handlers
+I, [2016-03-31T12:10:49.889608 #24233]  INFO -- default-centos-71: Running handlers complete
+I, [2016-03-31T12:10:49.889620 #24233]  INFO -- default-centos-71: [2016-03-31T19:10:48+00:00] ERROR: Exception handlers complete
+I, [2016-03-31T12:10:49.889674 #24233]  INFO -- default-centos-71: Chef Client failed. 1 resources updated in 02 seconds
+I, [2016-03-31T12:10:49.889688 #24233]  INFO -- default-centos-71: [2016-03-31T19:10:48+00:00] FATAL: Stacktrace dumped to /tmp/kitchen/cache/chef-stacktrace.out
+I, [2016-03-31T12:10:49.889701 #24233]  INFO -- default-centos-71: [2016-03-31T19:10:48+00:00] FATAL: Please provide the contents of the stacktrace.out file if you file a bug report
+I, [2016-03-31T12:10:49.889713 #24233]  INFO -- default-centos-71: [2016-03-31T19:10:48+00:00] ERROR: service[httpd] (test-apache1::default line 141) had an error: Mixlib::ShellOut::ShellCommandFailed: Expected process to exit with [0], but received '1'
+I, [2016-03-31T12:10:49.889725 #24233]  INFO -- default-centos-71: ---- Begin output of /bin/systemctl start httpd ----
+I, [2016-03-31T12:10:49.889737 #24233]  INFO -- default-centos-71: STDOUT: 
+I, [2016-03-31T12:10:49.889749 #24233]  INFO -- default-centos-71: STDERR: Job for httpd.service failed. See 'systemctl status httpd.service' and 'journalctl -xn' for details.
+I, [2016-03-31T12:10:49.889760 #24233]  INFO -- default-centos-71: ---- End output of /bin/systemctl start httpd ----
+I, [2016-03-31T12:10:49.889772 #24233]  INFO -- default-centos-71: Ran /bin/systemctl start httpd returned 1
+I, [2016-03-31T12:10:51.625964 #24233]  INFO -- default-centos-71: [2016-03-31T19:10:50+00:00] FATAL: Chef::Exceptions::ChildConvergeError: Chef run process exited unsuccessfully (exit code 1)
+E, [2016-03-31T12:10:51.651187 #24233] ERROR -- default-centos-71: Converge failed on instance <default-centos-71>.
+E, [2016-03-31T12:10:51.651338 #24233] ERROR -- default-centos-71: ------Exception-------
+E, [2016-03-31T12:10:51.651362 #24233] ERROR -- default-centos-71: Class: Kitchen::ActionFailed
+E, [2016-03-31T12:10:51.651371 #24233] ERROR -- default-centos-71: Message: SSH exited (1) for command: [sh -c '
+
+sudo -E /opt/chef/bin/chef-client --local-mode --config /tmp/kitchen/client.rb --log_level warn --force-formatter --no-color --json-attributes /tmp/kitchen/dna.json --chef-zero-port 8889
+']
+E, [2016-03-31T12:10:51.651380 #24233] ERROR -- default-centos-71: ---Nested Exception---
+E, [2016-03-31T12:10:51.651388 #24233] ERROR -- default-centos-71: Class: Kitchen::Transport::SshFailed
+E, [2016-03-31T12:10:51.651395 #24233] ERROR -- default-centos-71: Message: SSH exited (1) for command: [sh -c '
+
+sudo -E /opt/chef/bin/chef-client --local-mode --config /tmp/kitchen/client.rb --log_level warn --force-formatter --no-color --json-attributes /tmp/kitchen/dna.json --chef-zero-port 8889
+']
+E, [2016-03-31T12:10:51.651409 #24233] ERROR -- default-centos-71: ------Backtrace-------
+E, [2016-03-31T12:10:51.651418 #24233] ERROR -- default-centos-71: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/lib/kitchen/provisioner/base.rb:76:in `rescue in call'
+E, [2016-03-31T12:10:51.651426 #24233] ERROR -- default-centos-71: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/lib/kitchen/provisioner/base.rb:79:in `call'
+E, [2016-03-31T12:10:51.651434 #24233] ERROR -- default-centos-71: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/lib/kitchen/instance.rb:373:in `block in converge_action'
+E, [2016-03-31T12:10:51.651442 #24233] ERROR -- default-centos-71: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/lib/kitchen/instance.rb:513:in `call'
+E, [2016-03-31T12:10:51.651450 #24233] ERROR -- default-centos-71: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/lib/kitchen/instance.rb:513:in `synchronize_or_call'
+E, [2016-03-31T12:10:51.651482 #24233] ERROR -- default-centos-71: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/lib/kitchen/instance.rb:478:in `block in action'
+E, [2016-03-31T12:10:51.651491 #24233] ERROR -- default-centos-71: /opt/chefdk/embedded/lib/ruby/2.1.0/benchmark.rb:279:in `measure'
+E, [2016-03-31T12:10:51.651499 #24233] ERROR -- default-centos-71: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/lib/kitchen/instance.rb:477:in `action'
+E, [2016-03-31T12:10:51.651507 #24233] ERROR -- default-centos-71: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/lib/kitchen/instance.rb:369:in `converge_action'
+E, [2016-03-31T12:10:51.651515 #24233] ERROR -- default-centos-71: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/lib/kitchen/instance.rb:348:in `block in transition_to'
+E, [2016-03-31T12:10:51.651522 #24233] ERROR -- default-centos-71: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/lib/kitchen/instance.rb:347:in `each'
+E, [2016-03-31T12:10:51.651530 #24233] ERROR -- default-centos-71: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/lib/kitchen/instance.rb:347:in `transition_to'
+E, [2016-03-31T12:10:51.651538 #24233] ERROR -- default-centos-71: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/lib/kitchen/instance.rb:138:in `converge'
+E, [2016-03-31T12:10:51.651546 #24233] ERROR -- default-centos-71: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/lib/kitchen/command.rb:176:in `public_send'
+E, [2016-03-31T12:10:51.651554 #24233] ERROR -- default-centos-71: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/lib/kitchen/command.rb:176:in `block (2 levels) in run_action'
+E, [2016-03-31T12:10:51.651561 #24233] ERROR -- default-centos-71: ----------------------

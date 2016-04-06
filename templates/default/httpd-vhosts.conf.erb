@@ -1,0 +1,96 @@
+#
+# Virtual Hosts
+#
+# If you want to maintain multiple domains/hostnames on your
+# machine you can setup VirtualHost containers for them. Most configurations
+# use only name-based virtual hosts so the server doesn't need to worry about
+# IP addresses. This is indicated by the asterisks in the directives below.
+#
+# Please see the documentation at
+# <URL:http://httpd.apache.org/docs/2.2/vhosts/>
+# for further details before you try to setup virtual hosts.
+#
+# You may use the command line option '-S' to verify your virtual host
+# configuration.
+
+
+
+#
+# Use name-based virtual hosting.
+#
+NameVirtualHost 80
+
+
+#
+# VirtualHost example:
+# Almost any Apache directive may go into a VirtualHost container.
+# The first VirtualHost section is used for all requests that do not
+# match a ServerName or ServerAlias in any <VirtualHost> block.
+#
+
+<VirtualHost 80>
+
+   DocumentRoot "/edge-www"
+   ServerName ServerName
+   LogFormat "%{X-Forwarded-For}i %h %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\" " vcombined2
+   ErrorLog "|/usr/sbin/rotatelogs /var/log/httpd/error_log.%Y-%m-%d 86400"
+   CustomLog "|/usr/sbin/rotatelogs /var/log/httpd/access_log.%Y-%m-%d 86400" vcombined2
+   RewriteEngine on
+   RewriteOptions inherit
+
+   RewriteCond "%{SERVER_PORT}"       "^80$"
+   RewriteRule "^(.*)$"               "https://%{SERVER_NAME}$1" [R=301,L]
+
+   #????
+   JkMount /* tc
+   JkUnMount /status tc
+   JkUnMount /edge_healthcheck.html tc
+
+   #TODO
+   #<LocationMatch ^/.*>
+        #Order deny,allow
+        #Deny from all
+        #Allow from QDC big ip VIPRONs only
+        #Allow from localhost
+   #</LocationMatch>
+</VirtualHost>
+
+#SSL offloading from BIG-IP
+<VirtualHost 81>
+
+   # TODO
+   DocumentRoot "/edge-www"
+   ServerName ServerName
+   LogFormat "%{X-Forwarded-For}i %h %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\" " vcombined2
+   ErrorLog "|/usr/sbin/rotatelogs /var/log/httpd/error_log.%Y-%m-%d 86400"
+   CustomLog "|/usr/sbin/rotatelogs /var/log/httpd/access_log.%Y-%m-%d 86400" vcombined2
+   RewriteEngine on
+   RewriteOptions inherit
+   #RewriteRule "^/$" "https://%{SERVER_NAME}/qb/qbc/landing/index.html" [R=301,L] #????
+
+
+
+   JkMount /* tc
+   JkUnMount /status tc
+   JkUnMount /edge_healthcheck.html tc
+
+   #allow JKMount for Stage environment only
+
+   # ???
+   #RewriteCond %{REQUEST_URI} ^/(status|jmx-console.*|web-console.*)
+   #RewriteCond %{HTTP:X-Forwarded-For} !^65\.204\.229\.11$
+   #RewriteCond %{HTTP:X-Forwarded-For} !^208\.240\.243\.170$
+   #RewriteCond %{HTTP:X-Forwarded-For} !^172\.28\.([0-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5]))\.([0-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5]))$
+   #RewriteCond %{HTTP:X-Forwarded-For} !^172\.20\.([0-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5]))\.([0-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5]))$
+   #RewriteCond %{HTTP:X-Forwarded-For} !^172\.19\.([0-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5]))\.([0-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5]))$
+   #RewriteCond %{HTTP:X-Forwarded-For} !^172\.17\.([0-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5]))\.([0-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5]))$
+   #RewriteCond %{HTTP:X-Forwarded-For} !^172\.16\.([0-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5]))\.([0-9]|[1-9][0-9]|1([0-9][0-9])|2([0-4][0-9]|5[0-5]))$
+   #RewriteRule .* - [F]
+
+   #<LocationMatch ^/.*>
+        #Order deny,allow
+        #Deny from all
+        #Allow from QDC big ip VIPRONs only
+        #Allow from localhost 10.128.20, 10.128.18.
+   #</LocationMatch>
+</VirtualHost>

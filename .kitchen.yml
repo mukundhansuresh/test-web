@@ -1,0 +1,27 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+  roles_path: 'roles'
+  environments_path: 'environments'
+  nodes_path: 'nodes'
+  client_rb:
+    environment: test
+
+platforms:
+  - name: centos-6.4
+    driver:
+      customize:
+        memory: 1024
+
+suites:
+  - name: default
+    run_list:
+      - recipe[test-apache1::default]
+    attributes:
+  - name: pqalqbows300.ie.intu.net
+    run_list:
+      - recipe[test-apache1::default]
+    attributes:

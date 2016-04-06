@@ -1,0 +1,28 @@
+# This is a Chef recipe file. It can be used to specify resources which will
+# apply configuration to a server.
+
+package "httpd" do
+  version node['httpd']['version']
+  action :install
+end
+
+# Create the directory to store all of the httpd conf
+directory "/etc/httpd" do
+  action :create
+  owner "root"
+  group "root"
+  mode "0755"
+end
+
+# Create the conf.d folder (apparently doesn't get automatically create on httpd install)
+directory "/etc/httpd/conf.d" do
+  action :create
+  owner "root"
+  group "root"
+  mode "0755"
+end
+
+# Lastly, start the web server and make run in the background
+service "httpd" do
+  action [:enable, :start]
+end
