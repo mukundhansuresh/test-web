@@ -1,0 +1,3 @@
+I, [2016-04-06T18:56:12.095376 #73276]  INFO -- Kitchen: -----> Starting Kitchen (v1.6.0)
+I, [2016-04-06T18:56:12.383944 #73276]  INFO -- Kitchen: -----> Converging <pdevedgws300ieintunet-centos-64>...
+I, [2016-04-06T18:56:16.214508 #73276]  INFO -- Kitchen: -----> Kitchen is finished. (0m4.12s)

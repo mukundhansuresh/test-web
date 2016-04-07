@@ -1,12 +1,7 @@
 {
-  "name": "pqalqbows300.ie.intu.net",
+  "name": "pqaledgws300.ie.intu.net",
   "json_class": "Chef::Node",
   "chef_type": "node",
-  "chef_environment": "test",
-  "normal": {
-    "fqdn": "127.0.0.1",
-    "hostname": "pqalqbows300.ie.intu.net",
-    "ipaddress": "127.0.0.1"
-  },
+  "chef_environment": "e2e",
   "run_list": ["role[web]"]
 }

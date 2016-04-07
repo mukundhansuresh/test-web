@@ -1,4 +1,3 @@
-#
 # Cookbook Name:: apache2
 # Recipe:: default
 #
@@ -24,9 +23,8 @@ cookbook_file "/etc/sysconfig/httpd" do
   mode "0444"
 end
 
-if (node.run_list.roles.include?('test-web'))
-   echo "TEST"
-   directory "/etc/test" do
+if node.chef_environment == "dev"
+   directory "/etc/development" do
      action :create
      owner "root"
      group "root"
@@ -130,13 +128,13 @@ template "/etc/httpd/conf.d/mod-jk.conf" do
   group "root"
 end
 
-if node.roles.include?('web')
-  template "/etc/httpd/conf.d/workers.properties" do
+##if node.roles.include?('web')
+  cookbook_file "/etc/httpd/conf.d/workers.properties" do
   source "workers.properties_web.erb"
   mode "0644"
   owner "root"
   group "root"
-  end
+  ##end
 end
 
 # Copy the necessary files to allow health check and status checks

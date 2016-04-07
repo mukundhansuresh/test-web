@@ -1,5 +1,5 @@
 {
-  "name": "test",
+  "name": "e2e",
   "description": "test environment",
   "chef_type": "environment",
   "json_class": "Chef::Environment",

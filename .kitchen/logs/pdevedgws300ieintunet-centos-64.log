@@ -1,0 +1,44 @@
+I, [2016-04-06T18:56:12.383999 #73276]  INFO -- pdevedgws300ieintunet-centos-64: -----> Converging <pdevedgws300ieintunet-centos-64>...
+I, [2016-04-06T18:56:12.384544 #73276]  INFO -- pdevedgws300ieintunet-centos-64: Preparing files for transfer
+I, [2016-04-06T18:56:12.384607 #73276]  INFO -- pdevedgws300ieintunet-centos-64: Preparing dna.json
+I, [2016-04-06T18:56:12.385040 #73276]  INFO -- pdevedgws300ieintunet-centos-64: Preparing current project directory as a cookbook
+I, [2016-04-06T18:56:12.394442 #73276]  INFO -- pdevedgws300ieintunet-centos-64: Removing non-cookbook files before transfer
+I, [2016-04-06T18:56:12.397849 #73276]  INFO -- pdevedgws300ieintunet-centos-64: Preparing environments
+I, [2016-04-06T18:56:12.398400 #73276]  INFO -- pdevedgws300ieintunet-centos-64: Preparing nodes
+I, [2016-04-06T18:56:12.398838 #73276]  INFO -- pdevedgws300ieintunet-centos-64: Preparing roles
+I, [2016-04-06T18:56:12.399279 #73276]  INFO -- pdevedgws300ieintunet-centos-64: Preparing validation.pem
+I, [2016-04-06T18:56:12.399655 #73276]  INFO -- pdevedgws300ieintunet-centos-64: Preparing client.rb
+I, [2016-04-06T18:56:12.578223 #73276]  INFO -- pdevedgws300ieintunet-centos-64: -----> Chef Omnibus installation detected (install only if missing)
+I, [2016-04-06T18:56:12.598554 #73276]  INFO -- pdevedgws300ieintunet-centos-64: Transferring files to <pdevedgws300ieintunet-centos-64>
+I, [2016-04-06T18:56:13.585056 #73276]  INFO -- pdevedgws300ieintunet-centos-64: Starting Chef Client, version 12.8.1
+I, [2016-04-06T18:56:14.912803 #73276]  INFO -- pdevedgws300ieintunet-centos-64: resolving cookbooks for run list: ["test-apache1::default"]
+I, [2016-04-06T18:56:14.959721 #73276]  INFO -- pdevedgws300ieintunet-centos-64: Synchronizing Cookbooks:
+I, [2016-04-06T18:56:14.966975 #73276]  INFO -- pdevedgws300ieintunet-centos-64:   - test-apache1 (0.1.0)
+I, [2016-04-06T18:56:14.967009 #73276]  INFO -- pdevedgws300ieintunet-centos-64: Installing Cookbook Gems:
+I, [2016-04-06T18:56:14.967024 #73276]  INFO -- pdevedgws300ieintunet-centos-64: Compiling Cookbooks...
+I, [2016-04-06T18:56:14.980343 #73276]  INFO -- pdevedgws300ieintunet-centos-64: Converging 18 resources
+I, [2016-04-06T18:56:14.980379 #73276]  INFO -- pdevedgws300ieintunet-centos-64: Recipe: test-apache1::default
+I, [2016-04-06T18:56:15.918911 #73276]  INFO -- pdevedgws300ieintunet-centos-64:   * yum_package[httpd] action install (up to date)
+I, [2016-04-06T18:56:15.925101 #73276]  INFO -- pdevedgws300ieintunet-centos-64:   * cookbook_file[/etc/sysconfig/httpd] action create (up to date)
+I, [2016-04-06T18:56:15.925147 #73276]  INFO -- pdevedgws300ieintunet-centos-64:   * directory[/etc/development] action create (up to date)
+I, [2016-04-06T18:56:15.926833 #73276]  INFO -- pdevedgws300ieintunet-centos-64:   * directory[/etc/httpd] action create (up to date)
+I, [2016-04-06T18:56:15.935048 #73276]  INFO -- pdevedgws300ieintunet-centos-64:   * directory[/etc/httpd/conf] action create (up to date)
+I, [2016-04-06T18:56:15.935091 #73276]  INFO -- pdevedgws300ieintunet-centos-64:   * directory[/etc/httpd/conf.d] action create (up to date)
+I, [2016-04-06T18:56:15.935107 #73276]  INFO -- pdevedgws300ieintunet-centos-64:   * directory[/var/log/httpd] action create (up to date)
+I, [2016-04-06T18:56:15.935141 #73276]  INFO -- pdevedgws300ieintunet-centos-64:   * link[/etc/httpd/logs] action create (up to date)
+I, [2016-04-06T18:56:15.935153 #73276]  INFO -- pdevedgws300ieintunet-centos-64:   * directory[/edge-www] action create (up to date)
+I, [2016-04-06T18:56:15.935164 #73276]  INFO -- pdevedgws300ieintunet-centos-64:   * link[/etc/httpd/modules] action create (up to date)
+I, [2016-04-06T18:56:15.945168 #73276]  INFO -- pdevedgws300ieintunet-centos-64:   * cookbook_file[/etc/httpd/modules/mod_jk.so] action create (up to date)
+I, [2016-04-06T18:56:15.945216 #73276]  INFO -- pdevedgws300ieintunet-centos-64:   * template[/etc/httpd/conf/httpd.conf] action create (up to date)
+I, [2016-04-06T18:56:15.948947 #73276]  INFO -- pdevedgws300ieintunet-centos-64:   * template[/etc/httpd/conf.d/httpd-vhosts.conf] action create (up to date)
+I, [2016-04-06T18:56:15.951863 #73276]  INFO -- pdevedgws300ieintunet-centos-64:   * template[/etc/httpd/conf/mime.types] action create (up to date)
+I, [2016-04-06T18:56:15.955182 #73276]  INFO -- pdevedgws300ieintunet-centos-64:   * template[/etc/httpd/conf.d/mod-jk.conf] action create (up to date)
+I, [2016-04-06T18:56:15.957413 #73276]  INFO -- pdevedgws300ieintunet-centos-64:   * cookbook_file[/etc/httpd/conf.d/workers.properties] action create (up to date)
+I, [2016-04-06T18:56:15.959395 #73276]  INFO -- pdevedgws300ieintunet-centos-64:   * cookbook_file[/edge-www/edge_healthcheck.html] action create (up to date)
+I, [2016-04-06T18:56:16.044741 #73276]  INFO -- pdevedgws300ieintunet-centos-64:   * service[httpd] action enable (up to date)
+I, [2016-04-06T18:56:16.099694 #73276]  INFO -- pdevedgws300ieintunet-centos-64:   * service[httpd] action start (up to date)
+I, [2016-04-06T18:56:16.111777 #73276]  INFO -- pdevedgws300ieintunet-centos-64: 
+I, [2016-04-06T18:56:16.111857 #73276]  INFO -- pdevedgws300ieintunet-centos-64: Running handlers:
+I, [2016-04-06T18:56:16.111911 #73276]  INFO -- pdevedgws300ieintunet-centos-64: Running handlers complete
+I, [2016-04-06T18:56:16.111924 #73276]  INFO -- pdevedgws300ieintunet-centos-64: Chef Client finished, 0/19 resources updated in 02 seconds
+I, [2016-04-06T18:56:16.214219 #73276]  INFO -- pdevedgws300ieintunet-centos-64: Finished converging <pdevedgws300ieintunet-centos-64> (0m3.83s).

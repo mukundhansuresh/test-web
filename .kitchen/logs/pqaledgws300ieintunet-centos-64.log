@@ -1,0 +1,49 @@
+I, [2016-04-06T18:15:08.692874 #72435]  INFO -- pqaledgws300ieintunet-centos-64: -----> Converging <pqaledgws300ieintunet-centos-64>...
+I, [2016-04-06T18:15:08.693349 #72435]  INFO -- pqaledgws300ieintunet-centos-64: Preparing files for transfer
+I, [2016-04-06T18:15:08.693409 #72435]  INFO -- pqaledgws300ieintunet-centos-64: Preparing dna.json
+I, [2016-04-06T18:15:08.693914 #72435]  INFO -- pqaledgws300ieintunet-centos-64: Preparing current project directory as a cookbook
+I, [2016-04-06T18:15:08.702896 #72435]  INFO -- pqaledgws300ieintunet-centos-64: Removing non-cookbook files before transfer
+I, [2016-04-06T18:15:08.706235 #72435]  INFO -- pqaledgws300ieintunet-centos-64: Preparing environments
+I, [2016-04-06T18:15:08.707541 #72435]  INFO -- pqaledgws300ieintunet-centos-64: Preparing nodes
+I, [2016-04-06T18:15:08.708039 #72435]  INFO -- pqaledgws300ieintunet-centos-64: Preparing roles
+I, [2016-04-06T18:15:08.708685 #72435]  INFO -- pqaledgws300ieintunet-centos-64: Preparing validation.pem
+I, [2016-04-06T18:15:08.709057 #72435]  INFO -- pqaledgws300ieintunet-centos-64: Preparing client.rb
+I, [2016-04-06T18:15:08.902923 #72435]  INFO -- pqaledgws300ieintunet-centos-64: -----> Chef Omnibus installation detected (install only if missing)
+I, [2016-04-06T18:15:08.920548 #72435]  INFO -- pqaledgws300ieintunet-centos-64: Transferring files to <pqaledgws300ieintunet-centos-64>
+I, [2016-04-06T18:15:09.911913 #72435]  INFO -- pqaledgws300ieintunet-centos-64: Starting Chef Client, version 12.8.1
+I, [2016-04-06T18:15:11.230028 #72435]  INFO -- pqaledgws300ieintunet-centos-64: resolving cookbooks for run list: ["test-apache1::default"]
+I, [2016-04-06T18:15:11.273071 #72435]  INFO -- pqaledgws300ieintunet-centos-64: Synchronizing Cookbooks:
+I, [2016-04-06T18:15:11.281734 #72435]  INFO -- pqaledgws300ieintunet-centos-64:   - test-apache1 (0.1.0)
+I, [2016-04-06T18:15:11.281788 #72435]  INFO -- pqaledgws300ieintunet-centos-64: Installing Cookbook Gems:
+I, [2016-04-06T18:15:11.281803 #72435]  INFO -- pqaledgws300ieintunet-centos-64: Compiling Cookbooks...
+I, [2016-04-06T18:15:11.284871 #72435]  INFO -- pqaledgws300ieintunet-centos-64: Converging 18 resources
+I, [2016-04-06T18:15:11.286302 #72435]  INFO -- pqaledgws300ieintunet-centos-64: Recipe: test-apache1::default
+I, [2016-04-06T18:15:12.200195 #72435]  INFO -- pqaledgws300ieintunet-centos-64:   * yum_package[httpd] action install (up to date)
+I, [2016-04-06T18:15:12.212411 #72435]  INFO -- pqaledgws300ieintunet-centos-64:   * cookbook_file[/etc/sysconfig/httpd] action create (up to date)
+I, [2016-04-06T18:15:12.214048 #72435]  INFO -- pqaledgws300ieintunet-centos-64:   * directory[/etc/test1] action create
+I, [2016-04-06T18:15:12.214080 #72435]  INFO -- pqaledgws300ieintunet-centos-64:     - create new directory /etc/test1
+I, [2016-04-06T18:15:12.214095 #72435]  INFO -- pqaledgws300ieintunet-centos-64:     - change mode from '' to '0755'
+I, [2016-04-06T18:15:12.214106 #72435]  INFO -- pqaledgws300ieintunet-centos-64:     - change owner from '' to 'root'
+I, [2016-04-06T18:15:12.329214 #72435]  INFO -- pqaledgws300ieintunet-centos-64:     - change group from '' to 'root'
+I, [2016-04-06T18:15:12.335259 #72435]  INFO -- pqaledgws300ieintunet-centos-64:     - restore selinux security context
+I, [2016-04-06T18:15:12.340104 #72435]  INFO -- pqaledgws300ieintunet-centos-64:   * directory[/etc/httpd] action create (up to date)
+I, [2016-04-06T18:15:12.340143 #72435]  INFO -- pqaledgws300ieintunet-centos-64:   * directory[/etc/httpd/conf] action create (up to date)
+I, [2016-04-06T18:15:12.342189 #72435]  INFO -- pqaledgws300ieintunet-centos-64:   * directory[/etc/httpd/conf.d] action create (up to date)
+I, [2016-04-06T18:15:12.347261 #72435]  INFO -- pqaledgws300ieintunet-centos-64:   * directory[/var/log/httpd] action create (up to date)
+I, [2016-04-06T18:15:12.347300 #72435]  INFO -- pqaledgws300ieintunet-centos-64:   * link[/etc/httpd/logs] action create (up to date)
+I, [2016-04-06T18:15:12.347316 #72435]  INFO -- pqaledgws300ieintunet-centos-64:   * directory[/edge-www] action create (up to date)
+I, [2016-04-06T18:15:12.348514 #72435]  INFO -- pqaledgws300ieintunet-centos-64:   * link[/etc/httpd/modules] action create (up to date)
+I, [2016-04-06T18:15:12.356736 #72435]  INFO -- pqaledgws300ieintunet-centos-64:   * cookbook_file[/etc/httpd/modules/mod_jk.so] action create (up to date)
+I, [2016-04-06T18:15:12.360563 #72435]  INFO -- pqaledgws300ieintunet-centos-64:   * template[/etc/httpd/conf/httpd.conf] action create (up to date)
+I, [2016-04-06T18:15:12.363709 #72435]  INFO -- pqaledgws300ieintunet-centos-64:   * template[/etc/httpd/conf.d/httpd-vhosts.conf] action create (up to date)
+I, [2016-04-06T18:15:12.368880 #72435]  INFO -- pqaledgws300ieintunet-centos-64:   * template[/etc/httpd/conf/mime.types] action create (up to date)
+I, [2016-04-06T18:15:12.380873 #72435]  INFO -- pqaledgws300ieintunet-centos-64:   * template[/etc/httpd/conf.d/mod-jk.conf] action create (up to date)
+I, [2016-04-06T18:15:12.380908 #72435]  INFO -- pqaledgws300ieintunet-centos-64:   * cookbook_file[/etc/httpd/conf.d/workers.properties] action create (up to date)
+I, [2016-04-06T18:15:12.380924 #72435]  INFO -- pqaledgws300ieintunet-centos-64:   * cookbook_file[/edge-www/edge_healthcheck.html] action create (up to date)
+I, [2016-04-06T18:15:12.457434 #72435]  INFO -- pqaledgws300ieintunet-centos-64:   * service[httpd] action enable (up to date)
+I, [2016-04-06T18:15:12.512831 #72435]  INFO -- pqaledgws300ieintunet-centos-64:   * service[httpd] action start (up to date)
+I, [2016-04-06T18:15:12.530806 #72435]  INFO -- pqaledgws300ieintunet-centos-64: 
+I, [2016-04-06T18:15:12.530856 #72435]  INFO -- pqaledgws300ieintunet-centos-64: Running handlers:
+I, [2016-04-06T18:15:12.530871 #72435]  INFO -- pqaledgws300ieintunet-centos-64: Running handlers complete
+I, [2016-04-06T18:15:12.530885 #72435]  INFO -- pqaledgws300ieintunet-centos-64: Chef Client finished, 1/19 resources updated in 02 seconds
+I, [2016-04-06T18:15:12.626448 #72435]  INFO -- pqaledgws300ieintunet-centos-64: Finished converging <pqaledgws300ieintunet-centos-64> (0m3.93s).

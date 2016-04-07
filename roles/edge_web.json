@@ -1,5 +1,5 @@
 {
-  "name": "web",
+  "name": "edge_web",
   "description": "This is a webserver role to be used for reference only",
   "json_class": "Chef::Role",
   "default_attributes": {

@@ -4,11 +4,11 @@ driver:
 
 provisioner:
   name: chef_zero
-  roles_path: 'roles'
-  environments_path: 'environments'
-  nodes_path: 'nodes'
+  roles_path: '/Users/smukundhan/Documents/vagrant_centOS/centOS/cookbooks/test-apache1/roles'
+  environments_path: '/Users/smukundhan/Documents/vagrant_centOS/centOS/cookbooks/test-apache1/environments'
+  nodes_path: '/Users/smukundhan/Documents/vagrant_centOS/centOS/cookbooks/test-apache1/nodes'
   client_rb:
-    environment: test
+    environment: dev
 
 platforms:
   - name: centos-6.4
@@ -21,7 +21,7 @@ suites:
     run_list:
       - recipe[test-apache1::default]
     attributes:
-  - name: pqalqbows300.ie.intu.net
+  - name: pdevedgws300.ie.intu.net
     run_list:
       - recipe[test-apache1::default]
     attributes:
