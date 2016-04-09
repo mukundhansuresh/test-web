@@ -1,0 +1,27 @@
+## For complete documenation on all directives, see 
+## http://jakarta.apache.org/tomcat/connectors-doc/config/workers.html
+
+worker.list=tc, jkstatus
+
+worker.common.port=8009
+worker.common.connect_timeout=5000
+worker.common.prepost_timeout=5000
+worker.common.retries=2
+worker.common.socket_timeout=120
+worker.common.socket_connect_timeout=5000
+worker.common.type=ajp13
+worker.common.max_packet_size=65536
+
+worker.jkstatus.type=status
+
+worker.tc.type=lb
+worker.tc.sticky_session=0
+## The below join logic is to convert the output of ["server1", "server2"] to server1, server2
+worker.tc.balance_workers=<%=@app_server.sort.join(', ')%>
+
+<%-@app_server.each do |servernode| %>
+worker.<%=servernode%>.reference=worker.common
+worker.<%=servernode%>.host=<%=servernode%>
+worker.<%=servernode%>.port=8009
+<%- end%>
+

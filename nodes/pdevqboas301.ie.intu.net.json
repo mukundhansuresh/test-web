@@ -1,0 +1,7 @@
+{
+  "name": "pdevedgas301.ie.intu.net",
+  "json_class": "Chef::Node",
+  "chef_type": "node",
+  "chef_environment": "dev",
+  "run_list": ["role[edge_app]"]
+}

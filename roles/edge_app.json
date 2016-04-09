@@ -1,11 +1,11 @@
 {
-  "name": "edge_web",
-  "description": "This is a webserver role to be used for reference only",
+  "name": "edge_app",
+  "description": "This is a app server role to be used for reference only",
   "json_class": "Chef::Role",
   "default_attributes": {
-    "apache2": {
+    "tomcat": {
       "listen_port": [
-        "80"
+        "8090"
       ]
     }
   },

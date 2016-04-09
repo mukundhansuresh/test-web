@@ -8,7 +8,7 @@ provisioner:
   environments_path: '/Users/smukundhan/Documents/vagrant_centOS/centOS/cookbooks/test-apache1/environments'
   nodes_path: '/Users/smukundhan/Documents/vagrant_centOS/centOS/cookbooks/test-apache1/nodes'
   client_rb:
-    environment: dev
+    environment: edge_dev
 
 platforms:
   - name: centos-6.4
@@ -25,3 +25,6 @@ suites:
     run_list:
       - recipe[test-apache1::default]
     attributes:
+  - name: pdevedgas300.ie.intu.net
+    run_list:
+      - recipe[test-apache1::default]

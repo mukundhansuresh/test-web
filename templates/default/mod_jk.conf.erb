@@ -1,9 +1,9 @@
 # Load mod_jk module
 # Specify the filename of the mod_jk lib
-LoadModule jk_module /etc/httpd/modules/mod_jk.so
+LoadModule jk_module modules/mod_jk.so
  
 # Where to find workers.properties
-JkWorkersFile /etc/httpd/conf.d/workers.properties
+JkWorkersFile conf.d/workers.properties
 
 # Where to put jk logs
 JkLogFile logs/mod_jk.log
@@ -38,4 +38,4 @@ JkShmFile logs/jk.shm
     Order deny,allow
     Deny from all
     Allow from 127.0.0.1
-</Location>
+</Location> 

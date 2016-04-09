@@ -1,0 +1,16 @@
+{
+  "name": "edge_dev",
+  "description": "Development environment",
+  "chef_type": "environment",
+  "json_class": "Chef::Environment",
+  "default_attributes": {
+  "apache": {
+    "prefork": {
+      "startservers": "30"
+     }
+  },
+  "httpd": {
+     "version": "2.2.15-47.el6.centos"
+    }
+  }
+}
